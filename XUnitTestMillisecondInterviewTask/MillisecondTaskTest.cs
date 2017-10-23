@@ -10,14 +10,17 @@ namespace XUnitTestMillisecondInterviewTask
 {
     public class MillisecondTaskTest
     {
+        private const string _baseuri = "http://millisecondinterviewtaskapp.azurewebsites.net/api/Deployment";
+
         [Fact]
         public async Task GetAllDeployments_ShouldReturnAllDeployments()
         {
+            
             var client = new HttpClient();
 
             var request = new HttpRequestMessage
             {
-                RequestUri = new Uri("http://millisecondinterviewtaskapp.azurewebsites.net/api/Deployment/allData"),
+                RequestUri = new Uri(_baseuri + "/allData"),
                 Method = HttpMethod.Get
             };
 

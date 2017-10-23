@@ -26,7 +26,7 @@ namespace millisecondInterviewTask
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSingleton<IDataAccessLayer>(new DataAccessLayer(Configuration));
+            services.AddSingleton<IDataAccessLayer, DataAccessLayer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
